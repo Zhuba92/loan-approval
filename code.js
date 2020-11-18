@@ -32,21 +32,21 @@ $(document).ready(
                 salary:
                     {
                         required: " Please input a number",
-                        min: " Need a higher number",
+                        min: " Can not be less than 0",
                         max: " Need a lower number",
                         digits: " Not a number"
                     },
                 credit:
                     {
-                        required: "P lease input a number",
-                        min: " Need a higher number",
-                        max: " Need a lower number",
+                        required: "Please input a number",
+                        min: " Must be at least 300",
+                        max: " Can not be higher than 850",
                         digits: " Not a number"
                     },
                 months:
                     {
                         required: " Please input a number",
-                        min: " Need a higher number",
+                        min: " Can not be less than 0",
                         max: " Need a lower number",
                         digits: " Not a number"
                     }
@@ -66,17 +66,17 @@ $(document).ready(
             var credit = parseInt($("#credit").val());
             var months = parseInt($("#months").val());
 
-            if(salary >= 40000)
+            if(salary >= 40000 && salary <= 2000000)
             {
-                if(credit >= 600)
+                if(credit >= 600 && credit <= 850)
                 {
                     $("#output").text(`You have been approved`);
                 }
-                else if(credit < 600 && months > 12)
+                else if((credit >= 300 && credit < 600) && (months > 12 && months < 600))
                 {
                     $("#output").text(`You have been approved`);
                 }
-                else if(credit < 600 && months <= 12)
+                else if((credit >= 300 && credit < 600) && (months <= 12 && months > 0))
                 {
                     $("#output").text(`You have been denied`);
                 }
@@ -85,17 +85,17 @@ $(document).ready(
                     $("#output").text(`Please fill in the above information`);
                 }
             }
-            else if(salary < 40000)
+            else if(salary < 40000 && salary > 0)
             {
-                if(credit >= 600 && months > 12)
+                if((credit >= 600 && credit <= 850) && (months > 12 && months < 600))
                 {
                     $("#output").text(`You have been approved`);
                 }
-                else if(credit >= 600 && months <= 12)
+                else if((credit >= 600 && credit <= 850) && (months <= 12 && months > 0))
                 {
                     $("#output").text(`You have been denied`);
                 }
-                else if(credit < 600)
+                else if(credit >= 300 && credit < 600)
                 {
                     $("#output").text(`You have been denied`);
                 }
