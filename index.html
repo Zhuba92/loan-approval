@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.js"></script>
+    <script src="code.js"></script>
+    <style>
+        fieldset{width: 20%}
+    </style>
+
+</head>
+<body>
+<h2>Please fill in fields marked with an *</h2>
+<form>
+    <fieldset>
+        <legend>Enter the following information</legend>
+        <label for="salary">Salary *</label>
+        <input type="number" id="salary" name="salary" required><br><br>
+        <label for="credit">Credit Score *</label>
+        <input type="number" id="credit" name="credit" required><br><br>
+        <label for="months">Months at current job *</label>
+        <input type="number" id="months" name="months" required>
+    </fieldset>
+    <br>
+    <button id="submit">Click to see if you are approved</button>
+</form>
+<p id="output"></p>
+
+</body>
+</html>
